@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>WASM.Blazor</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="WASM.Blazor.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <script>
+        var dotnet_ref;
+        window.calculator_wasm = {
+            init: dotnetHelper => {
+                dotnet_ref = dotnetHelper;
+            }
+        };
+
+        function Calculate(x, y, resultCallbackFunc) {
+            console.log("calling dotnet.");
+
+            dotnet_ref.invokeMethodAsync('Calculate', x, y)
+                .then(res => {
+                    resultCallbackFunc(res);
+                });
+            
+        }
+    </script>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

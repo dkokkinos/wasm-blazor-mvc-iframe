@@ -1,0 +1,31 @@
+﻿@page "/calculator-wasm"
+
+@using WASM.Lib;
+
+@inject IJSRuntime jsRuntime
+@inject Calculator calculator
+
+@code{
+
+    protected override void OnInitialized()
+    {
+        jsRuntime.InvokeVoidAsync("calculator_wasm.init", DotNetObjectReference.Create(this));
+    }
+
+    [JSInvokable("Calculate")]
+    public string Calculate(int x, int y)
+    {
+        try
+        {
+            Console.WriteLine("called");
+            var res = calculator.Calculate(x, y);
+            Console.WriteLine("executed");
+            return res.ToString();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return null;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To WebAssembly Demo</h1>
+
+    <iframe style="visibility:collapse; display:contents" id="calculatorIFrame" src="/calculator-wasm"></iframe>
+
+    <input type="number" id="input1">
+    <input type="number" id="input2"/>
+
+    <button onclick="calculate()">calculate</button>
+</div>
+
+
+<script>
+
+
+    function calculate() {
+
+        let x = parseInt($("#input1").val());
+        let y = parseInt($("#input2").val());
+
+        document.getElementById('calculatorIFrame').contentWindow.Calculate(x, y, InterpreterResultReceived);
+    }
+
+    function InterpreterResultReceived(res) {
+        alert("Result from C# is: " + res);
+    }
+</script>
