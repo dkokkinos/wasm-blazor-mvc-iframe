@@ -36,7 +36,6 @@ namespace WASM.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -45,11 +44,9 @@ namespace WASM.Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapFallbackToFile("index.html");
             });
         }
     }

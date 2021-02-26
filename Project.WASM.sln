@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASM.Web", "WASM.Web\WASM.Web.csproj", "{528E4545-8553-44B2-B024-CAF8DBC85DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASM.Web", "WASM.Web\WASM.Web.csproj", "{528E4545-8553-44B2-B024-CAF8DBC85DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASM.Blazor", "WASM.Blazor\WASM.Blazor.csproj", "{3186D87C-42E5-4687-A45F-87074C05DF95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASM.Blazor", "WASM.Blazor\WASM.Blazor.csproj", "{3186D87C-42E5-4687-A45F-87074C05DF95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WASM.Lib", "WASM.Lib\WASM.Lib.csproj", "{D0341B70-292C-4361-AEDB-D44D27526F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WASM.Lib", "WASM.Lib\WASM.Lib.csproj", "{D0341B70-292C-4361-AEDB-D44D27526F55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
